@@ -39,7 +39,8 @@ CREATE TABLE tbl_store(
 CREATE TABLE tbl_vinyl(
 	vinylId INT PRIMARY KEY IDENTITY(1,1),
 	title VARCHAR(20),
-	releaseDate DATETIME
+	releaseDate DATETIME,
+	price DECIMAL(19,2) NOT NULL
 );
 CREATE TABLE tbl_track(
 	trackId INT PRIMARY KEY IDENTITY(1,1),
