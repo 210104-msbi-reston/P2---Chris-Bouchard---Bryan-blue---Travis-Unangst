@@ -81,3 +81,17 @@ END
 --test
 	-- SELECT * FROM tbl_store
 	-- SELECT COUNT(*) AS [stores in zone] FROM tbl_store GROUP BY zoneId
+
+
+-----------------------------------------------------------------------------------
+--ssis import album list
+	--for each row in the album list
+	--title,artist,genre,year,img_url,tracklist
+	--The Dark Side Of The Moon | Pink Floyd | Rock;Prog Rock;Psychedelic Rock | 1973 | https://img.discogs.com/jKTmuxcsYe2TqcahU3QqVXJLssU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1873013-1471100381-3022.jpeg.jpg | Speak To Me;Breathe;On The Run;Time;The Great Gig In The Sky;Money;Us And Them;Any Colour You Like;Brain Damage;Eclipse
+
+CREATE PROCEDURE proc_initAlbum 
+@aTitle VARCHAR(255),
+@aArtist VARCHAR(100),
+@aGenre VARCHAR(100),
+@aYear DATETIME,
+@aLink 

@@ -37,8 +37,10 @@ CREATE TABLE tbl_albumInfo(
 	albumInfoId INT PRIMARY KEY IDENTITY(1,1),
 	title VARCHAR(20) NOT NULL,
 	artist VARCHAR(40) NOT NULL,
-	releaseDate DATETIME
+	releaseDate DATETIME,
+	imgLink VARCHAR(max)
 ); 
+
 CREATE TABLE tbl_track(
 	trackId INT PRIMARY KEY IDENTITY(1,1),
 	albumInfoId INT FOREIGN KEY REFERENCES tbl_albumInfo(albumInfoId),
