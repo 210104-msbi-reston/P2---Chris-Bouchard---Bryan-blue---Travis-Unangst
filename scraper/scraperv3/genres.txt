@@ -1,0 +1,197 @@
+genreId,genreName
+1,Rock
+2,Prog Rock
+3,Psychedelic Rock
+4,Rock & Roll
+5,Pop Rock
+6,Funk / Soul
+7,Pop
+8,Disco
+9,Soul
+10,Art Rock
+11,Hard Rock
+12,Classic Rock
+13,Blues Rock
+14,AOR
+15,Glam
+16,Beat
+17,Jazz
+18,Modal
+19,Heavy Metal
+20,Country Rock
+21,Stage & Screen
+22,Soundtrack
+23,Minneapolis Sound
+24,Funk
+25,Electronic
+26,Alternative Rock
+27,Acoustic
+28,Grunge
+29,Folk Rock
+30,Soft Rock
+31,Punk
+32,New Wave
+33,Reggae
+34,Roots Reggae
+35,Blues
+36,Arena Rock
+37,Mod
+38,Garage Rock
+39,Experimental
+40,Dance-pop
+41,Post-Punk
+42,Thrash
+43,Speed Metal
+44,Symphonic Rock
+45,Hip Hop
+46,Funk Metal
+47,Ballad
+48,Doom Metal
+49,Modern Classical
+50,Synth-pop
+51,Vocal
+52,Indie Rock
+53,Rock Opera
+54,Jazz-Rock
+55,Southern Rock
+56,Texas Blues
+57,IDM
+58,Hardcore Hip-Hop
+59,Trip Hop
+60,Downtempo
+61,Bop
+62,Electro
+63,Free Jazz
+64,Hard Bop
+65,Dub
+66,Rhythm & Blues
+67,Ambient
+68,Power Pop
+69,Avantgarde
+70,Space Rock
+71,Fusion
+72,Latin Jazz
+73,Leftfield
+74,Latin
+75,Afro-Cuban
+76,Contemporary R&B
+77,Krautrock
+78,Lovers Rock
+79,Reggae-Pop
+80,Score
+81,Acid Rock
+82,Dream Pop
+83,Indie Pop
+84,Contemporary Jazz
+85,Conscious
+86,Jazzy Hip-Hop
+87,G-Funk
+88,Pop Rap
+89,Darkwave
+90,Instrumental
+91,Cut-up/DJ
+92,Gangsta
+93,Goth Rock
+94,Industrial
+95,Jazz-Funk
+96,Breakbeat
+97,Breaks
+98,Big Beat
+99,Hardcore
+100,Lo-Fi
+101,Brit Pop
+102,UK Garage
+103,New Jack Swing
+104,Gospel
+105,Ska
+106,Theme
+107,Noise
+108,Parody
+109,Neo Soul
+110,Piano Blues
+111,Easy Listening
+112,Electric Blues
+113,Afro-Cuban Jazz
+114,Post Bop
+115,Hi NRG
+116,House
+117,Soul-Jazz
+118,Smooth Jazz
+119,Post Rock
+120,Chicago Blues
+121,Harmonica Blues
+122,Cool Jazz
+123,Techno
+124,Rockabilly
+125,Abstract
+126,Dubstep
+127,Bass Music
+128,Death Metal
+129,Flamenco
+130,Acid House
+131,Rocksteady
+132,Trance
+133,Hip-House
+134,Euro House
+135,Tribal
+136,Non-Music
+137,Spoken Word
+138,Psychedelic
+139,Ethereal
+140,Swing
+141,Berlin-School
+142,Drone
+143,Shoegaze
+144,Bossa Nova
+145,Samba
+146,P.Funk
+147,Dialogue
+148,Black Metal
+149,Jump Blues
+150,Classical
+151,Musical
+152,Folk
+153,Neo-Classical
+154,Progressive House
+155,Post-Hardcore
+156,Boom Bap
+157,Comedy
+158,Deep House
+159,Thug Rap
+160,Chanson
+161,Bleep
+162,Modern Electric Blues
+163,Boogie
+164,Big Band
+165,Stoner Rock
+166,Doo Wop
+167,Hard House
+168,Acid
+169,New Age
+170,Italo House
+171,Euro-Disco
+172,Afrobeat
+173,Acid Jazz
+174,Eurodance
+175,Freestyle
+176,Psychobilly
+177,Garage House
+178,Children's
+179,Novelty
+180,Italo-Disco
+181,Avant-garde Jazz
+182,RnB/Swing
+183,Progressive Trance
+184,Ragtime
+185,Grindcore
+186,Pop Punk
+187,Dark Ambient
+188,Gogo
+189,Tech House
+190,Jazzdance
+191,Viking Metal
+192,Bayou Funk
+193,Louisiana Blues
+194,Gothic Metal
+195,NDW
+196,EBM
