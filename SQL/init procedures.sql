@@ -67,7 +67,7 @@ CREATE PROCEDURE proc_initStore @zoneId INT
 AS
 BEGIN
 	DECLARE @zoneCount INT;
-	SET @zoneCount = RAND()*(3-1)+1; 
+	SET @zoneCount = FLOOR(RAND()*4); 
 
 	WHILE @zoneCount > 0
 		BEGIN
