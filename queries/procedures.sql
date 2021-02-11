@@ -105,7 +105,6 @@ BEGIN
 			INSERT INTO tbl_continent(continentName, corporateId) 
 			VALUES(@continentName, @corporateId);
 		END
-
 	ELSE IF @action = 'update' ---------------------------------------------------------------
 		BEGIN
 			UPDATE tbl_continent

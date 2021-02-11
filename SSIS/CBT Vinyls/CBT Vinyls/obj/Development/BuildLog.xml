@@ -2,18 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CBT Vinyls</Name>
-    <LastWriteTime>2021-02-09T17:29:25.8540044Z</LastWriteTime>
+    <LastWriteTime>2021-02-11T00:31:47.8040658Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ImportContinent.dtsx</Name>
-      <LastWriteTime>2021-02-09T17:24:56.6699432Z</LastWriteTime>
+      <LastWriteTime>2021-02-11T02:17:55.9403693Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ImportCountries.dtsx</Name>
-      <LastWriteTime>2021-02-09T17:40:37.2141515Z</LastWriteTime>
+      <LastWriteTime>2021-02-11T02:35:21.5234345Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Package1.dtsx</Name>
+      <LastWriteTime>2021-02-11T00:31:47.7940647Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

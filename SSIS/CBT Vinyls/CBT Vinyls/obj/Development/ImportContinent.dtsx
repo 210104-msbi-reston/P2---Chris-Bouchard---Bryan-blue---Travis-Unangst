@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{DD3208DC-4C3B-4B36-94B9-C2D1E1989C5C}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{34DF5C46-A46C-429F-B397-0C194184D59F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -68,13 +68,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Countries and Continents"
+      DTS:refId="Package\Continent DataFlow"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{D07E3D61-AAEF-45EA-98D4-0FBE0C0484DF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Countries and Continents"
+      DTS:ObjectName="Continent DataFlow"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -82,7 +82,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Countries and Continents\Continent"
+              refId="Package\Continent DataFlow\Continent"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -139,7 +139,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Countries and Continents\Continent.Connections[OleDbConnection]"
+                  refId="Package\Continent DataFlow\Continent.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
                   connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
                   description="The OLE DB runtime connection used to access the database."
@@ -147,60 +147,54 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input]"
+                  refId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input].Columns[corporateIdColumn]"
-                      cachedDataType="i4"
-                      cachedName="corporateIdColumn"
-                      externalMetadataColumnId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[corporateId]"
-                      lineageId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Output].Columns[corporateIdColumn]" />
-                    <inputColumn
-                      refId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input].Columns[continentTransformed]"
+                      refId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input].Columns[continentTransformed]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="continentTransformed"
-                      externalMetadataColumnId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentName]"
-                      lineageId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Output].Columns[continentTransformed]" />
+                      externalMetadataColumnId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentName]"
+                      lineageId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Output].Columns[continentTransformed]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentName]"
+                      refId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentName]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="continentName" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[corporateId]"
+                      refId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentId]"
                       dataType="i4"
-                      name="corporateId" />
+                      name="continentId" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Countries and Continents\Continent.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Continent DataFlow\Continent.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Countries and Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Continent DataFlow\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Countries and Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Continent DataFlow\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Countries and Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Continent DataFlow\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Countries and Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Continent DataFlow\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -209,7 +203,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Countries and Continents\Country&amp;Continent 1"
+              refId="Package\Continent DataFlow\Country&amp;Continent 1"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Excel Source"
@@ -250,7 +244,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Countries and Continents\Country&amp;Continent 1.Connections[OleDbConnection]"
+                  refId="Package\Continent DataFlow\Country&amp;Continent 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
@@ -258,78 +252,78 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output]"
+                  refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output]"
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
+                      externalMetadataColumnId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
                       length="50"
-                      lineageId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
+                      lineageId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
                       name="Continent"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[number]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[number]"
                       dataType="r8"
                       name="number" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Country]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Country]"
                       dataType="wstr"
                       length="255"
                       name="Country" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[ISO-alpha3 Code]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[ISO-alpha3 Code]"
                       dataType="wstr"
                       length="255"
                       name="ISO-alpha3 Code" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[M49 Code]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[M49 Code]"
                       dataType="r8"
                       name="M49 Code" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 1]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 1]"
                       dataType="wstr"
                       length="255"
                       name="Region 1" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 2]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 2]"
                       dataType="wstr"
                       length="255"
                       name="Region 2" />
                     <externalMetadataColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
                       dataType="wstr"
                       length="255"
                       name="Continent" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output]"
+                  refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output]"
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
+                      lineageId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
                       name="Continent" />
                     <outputColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -338,159 +332,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Countries and Continents\Data Conversion 1"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion 1"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Countries and Continents\Data Conversion 1.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Countries and Continents\Data Conversion 1.Inputs[Data Conversion Input].Columns[Continent]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Continent"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Countries and Continents\Sort.Outputs[Sort Output].Columns[Continent]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Countries and Continents\Data Conversion 1.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Output].Columns[continentTransformed]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Output].Columns[continentTransformed]"
-                      name="continentTransformed"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Countries and Continents\Sort.Outputs[Sort Output].Columns[Continent]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Countries and Continents\Data Conversion 1.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Countries and Continents\Derived Column 2"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column 2"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Countries and Continents\Derived Column 2.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Countries and Continents\Derived Column 2.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Output].Columns[corporateIdColumn]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Output].Columns[corporateIdColumn]"
-                      name="corporateIdColumn"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">5</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">5</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Countries and Continents\Derived Column 2.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Countries and Continents\Sort"
+              refId="Package\Continent DataFlow\Sort"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
@@ -509,15 +351,15 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Countries and Continents\Sort.Inputs[Sort Input]"
+                  refId="Package\Continent DataFlow\Sort.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Countries and Continents\Sort.Inputs[Sort Input].Columns[Continent]"
+                      refId="Package\Continent DataFlow\Sort.Inputs[Sort Input].Columns[Continent]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Continent"
-                      lineageId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]">
+                      lineageId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -535,15 +377,15 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Countries and Continents\Sort.Outputs[Sort Output]"
+                  refId="Package\Continent DataFlow\Sort.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Countries and Continents\Sort.Outputs[Sort Output].Columns[Continent]"
+                      refId="Package\Continent DataFlow\Sort.Outputs[Sort Output].Columns[Continent]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Countries and Continents\Sort.Outputs[Sort Output].Columns[Continent]"
+                      lineageId="Package\Continent DataFlow\Sort.Outputs[Sort Output].Columns[Continent]"
                       name="Continent"
                       sortKeyPosition="1">
                       <properties>
@@ -551,9 +393,88 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]}</property>
+                          name="SortColumnId">#{Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]}</property>
                       </properties>
                     </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Continent DataFlow\to VARCHAR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="to VARCHAR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Continent DataFlow\to VARCHAR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Continent DataFlow\to VARCHAR.Inputs[Data Conversion Input].Columns[Continent]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Continent"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Continent DataFlow\Sort.Outputs[Sort Output].Columns[Continent]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Continent DataFlow\to VARCHAR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Output].Columns[continentTransformed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Output].Columns[continentTransformed]"
+                      name="continentTransformed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Continent DataFlow\Sort.Outputs[Sort Output].Columns[Continent]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Continent DataFlow\to VARCHAR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -562,25 +483,20 @@
           </components>
           <paths>
             <path
-              refId="Package\Countries and Continents.Paths[Data Conversion Output]"
-              endId="Package\Countries and Continents\Derived Column 2.Inputs[Derived Column Input]"
+              refId="Package\Continent DataFlow.Paths[Data Conversion Output]"
+              endId="Package\Continent DataFlow\Continent.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Countries and Continents\Data Conversion 1.Outputs[Data Conversion Output]" />
+              startId="Package\Continent DataFlow\to VARCHAR.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Countries and Continents.Paths[Derived Column Output]"
-              endId="Package\Countries and Continents\Continent.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Countries and Continents\Derived Column 2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Countries and Continents.Paths[Excel Source Output]"
-              endId="Package\Countries and Continents\Sort.Inputs[Sort Input]"
+              refId="Package\Continent DataFlow.Paths[Excel Source Output]"
+              endId="Package\Continent DataFlow\Sort.Inputs[Sort Input]"
               name="Excel Source Output"
-              startId="Package\Countries and Continents\Country&amp;Continent 1.Outputs[Excel Source Output]" />
+              startId="Package\Continent DataFlow\Country&amp;Continent 1.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Countries and Continents.Paths[Sort Output]"
-              endId="Package\Countries and Continents\Data Conversion 1.Inputs[Data Conversion Input]"
+              refId="Package\Continent DataFlow.Paths[Sort Output]"
+              endId="Package\Continent DataFlow\to VARCHAR.Inputs[Data Conversion Input]"
               name="Sort Output"
-              startId="Package\Countries and Continents\Sort.Outputs[Sort Output]" />
+              startId="Package\Continent DataFlow\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -599,95 +515,35 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="197,42"
-          Id="Package\Countries and Continents"
+          Size="171,42"
+          Id="Package\Continent DataFlow"
           TopLeft="459,173" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Countries and Continents">
+    design-time-name="Package\Continent DataFlow">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Countries and Continents\Continent"
-          TopLeft="160,474" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="168,42"
-          Id="Package\Countries and Continents\Country&amp;Continent 1"
+          Id="Package\Continent DataFlow\Country&amp;Continent 1"
           TopLeft="129,44" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Countries and Continents\Data Conversion 1"
+          Size="138,42"
+          Id="Package\Continent DataFlow\to VARCHAR"
           TopLeft="134,219" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Countries and Continents\Derived Column 2"
-          TopLeft="132,316" />
-        <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Data Conversion Output]"
-          TopLeft="215,261">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Derived Column Output]"
-          TopLeft="213.5,358">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.5,116"
-              Start="0,0"
-              End="8.5,108.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54"
-                    Point2="0,58"
-                    Point3="4,58" />
-                  <mssgle:LineSegment
-                    End="4.5,58" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,58"
-                    Point2="8.5,58"
-                    Point3="8.5,62" />
-                  <mssgle:LineSegment
-                    End="8.5,108.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="124,42"
+          Id="Package\Continent DataFlow\Continent"
+          TopLeft="153,382" />
         <NodeLayout
           Size="98,42"
-          Id="Package\Countries and Continents\Sort"
+          Id="Package\Continent DataFlow\Sort"
           TopLeft="160,130" />
         <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Excel Source Output]"
+          Id="Package\Continent DataFlow.Paths[Excel Source Output]"
           TopLeft="211,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -709,8 +565,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Sort Output]"
-          TopLeft="212.75,172">
+          Id="Package\Continent DataFlow.Paths[Sort Output]"
+          TopLeft="206,172">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -730,11 +586,45 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Continent DataFlow.Paths[Data Conversion Output]"
+          TopLeft="203,261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,121"
+              Start="0,0"
+              End="12,113.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.5"
+                    Point2="0,60.5"
+                    Point3="4,60.5" />
+                  <mssgle:LineSegment
+                    End="8,60.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,60.5"
+                    Point2="12,60.5"
+                    Point3="12,64.5" />
+                  <mssgle:LineSegment
+                    End="12,113.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Countries and Continents\Continent">
+    design-time-name="Package\Continent DataFlow\Continent">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -747,7 +637,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Countries and Continents\Country&amp;Continent 1">
+    design-time-name="Package\Continent DataFlow\Country&amp;Continent 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
