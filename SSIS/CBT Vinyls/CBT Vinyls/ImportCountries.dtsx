@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{FE0544D4-B244-4046-A034-48D238CCC7E1}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{EFA39BCB-756F-49DE-BC14-3CF1711C71C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -910,13 +910,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="107,42"
+          Id="Package\Countries and Continents\Sort 1"
+          TopLeft="251,142" />
+        <NodeLayout
           Size="205,42"
           Id="Package\Countries and Continents\To VARCHAR for Continent"
           TopLeft="320,386" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Countries and Continents\Sort"
-          TopLeft="500,134" />
         <NodeLayout
           Size="168,42"
           Id="Package\Countries and Continents\Country&amp;Continent 1"
@@ -925,105 +925,44 @@
           Size="116,42"
           Id="Package\Countries and Continents\Country"
           TopLeft="360,464" />
-        <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Excel Source Output]"
-          TopLeft="551,90">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Continents should be done first"
-          ParentId="Package\Countries and Continents"
-          FontInfo="{assembly:Null}"
-          Size="196,40"
-          Id="cf39b9ae-b751-4959-8e1e-bc7309af9af9"
-          TopLeft="660,52" />
         <NodeLayout
           Size="154,42"
           Id="Package\Countries and Continents\continents table"
           TopLeft="233,50" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Countries and Continents\Sort 1"
-          TopLeft="251,142" />
-        <EdgeLayout
-          Id="Package\Countries and Continents.Paths[OLE DB Source Output]"
-          TopLeft="307.25,92">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="130,42"
           Id="Package\Countries and Continents\Merge Join"
           TopLeft="360,300" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Countries and Continents\Sort"
+          TopLeft="500,134" />
         <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Merge Join Output]"
-          TopLeft="423.75,342">
+          Id="Package\Countries and Continents.Paths[Sort Output1]"
+          TopLeft="549,176">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="-103.666666666667,124"
               Start="0,0"
-              End="0,36.5">
+              End="-103.666666666667,116.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Data Conversion Output]"
-          TopLeft="420.25,428">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,69.4954407294833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69.4954407294833"
+                    Point2="0,73.4954407294833"
+                    Point3="-4,73.4954407294833" />
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="-99.6666666666667,73.4954407294833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-99.6666666666667,73.4954407294833"
+                    Point2="-103.666666666667,73.4954407294833"
+                    Point3="-103.666666666667,77.4954407294833" />
+                  <mssgle:LineSegment
+                    End="-103.666666666667,116.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1067,31 +1006,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Countries and Continents.Paths[Sort Output1]"
-          TopLeft="549,176">
+          Id="Package\Countries and Continents.Paths[OLE DB Source Output]"
+          TopLeft="307.25,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-103.666666666667,124"
+              EndConnector="0,50"
               Start="0,0"
-              End="-103.666666666667,116.5">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.4954407294833" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69.4954407294833"
-                    Point2="0,73.4954407294833"
-                    Point3="-4,73.4954407294833" />
-                  <mssgle:LineSegment
-                    End="-99.6666666666667,73.4954407294833" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-99.6666666666667,73.4954407294833"
-                    Point2="-103.666666666667,73.4954407294833"
-                    Point3="-103.666666666667,77.4954407294833" />
-                  <mssgle:LineSegment
-                    End="-103.666666666667,116.5" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1100,6 +1027,79 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Countries and Continents.Paths[Merge Join Output]"
+          TopLeft="423.75,342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Countries and Continents.Paths[Excel Source Output]"
+          TopLeft="551,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Countries and Continents.Paths[Data Conversion Output]"
+          TopLeft="420.25,428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Continents should be done first"
+          ParentId="Package\Countries and Continents"
+          FontInfo="{assembly:Null}"
+          Size="196,40"
+          Id="cf39b9ae-b751-4959-8e1e-bc7309af9af9"
+          TopLeft="660,52" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

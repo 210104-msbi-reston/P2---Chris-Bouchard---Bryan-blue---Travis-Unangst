@@ -4,14 +4,15 @@ USE CBTVinyls;
 ------------------------------------------------------------------------------------------------
 CREATE TABLE tbl_continent(
 	continentId INT PRIMARY KEY IDENTITY(1,1),
-	continentName VARCHAR(20)
+	continentName VARCHAR(20) UNIQUE
 );
 
 CREATE TABLE tbl_country(
 	countryId INT PRIMARY KEY IDENTITY(1,1),
 	continentId INT FOREIGN KEY REFERENCES tbl_continent(continentId),
-	countryName VARCHAR(255)
+	countryName VARCHAR(255) UNIQUE
 );
+
 CREATE TABLE tbl_production(
 	productionId INT PRIMARY KEY IDENTITY(1,1),
 	continentId INT FOREIGN KEY REFERENCES tbl_continent(continentId)
