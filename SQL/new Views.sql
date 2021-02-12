@@ -114,3 +114,20 @@ SELECT
 FROM tbl_albumInfo AS a
 	JOIN tbl_track AS t
 ON a.albumInfoId = t.albumInfoId
+-- test as       select * from view_albumInfoTracks
+
+CREATE VIEW view_albumInfoGenres
+AS
+SELECT
+DISTINCT
+	a.albumInfoId AS [Album Info Id],
+	a.title AS [Title],
+	a.artist AS [Artist],
+	g.genreName AS [Genre],
+	a.releaseDate AS [Release Date]
+FROM tbl_albumInfo AS a
+	JOIN tbl_albumInfo_genre AS a_g
+ON a_g.albumInfoId = a.albumInfoId
+	JOIN tbl_genre AS g
+ON a_g.genreId = g.genreId
+-- test as       select * from view_albumInfoGenres

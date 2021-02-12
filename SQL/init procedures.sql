@@ -92,6 +92,108 @@ END
 CREATE PROCEDURE proc_initAlbum 
 @aTitle VARCHAR(255),
 @aArtist VARCHAR(100),
-@aGenre VARCHAR(100),
 @aYear DATETIME,
-@aLink 
+@aLink VARCHAR(max)
+--@aGenre VARCHAR(100),
+--@aTracks VARCHAR(max)
+AS
+BEGIN
+	--variables
+	DECLARE @insertedAlbumIdentity INT;
+
+	--add to info table
+	INSERT INTO tbl_albumInfo(title,artist,releaseDate,imgLink)
+	VALUES(@aTitle,@aArtist,@aYear,@aLink);
+
+	SET @insertedAlbumIdentity = SCOPE_IDENTITY();
+
+	--break up genres on the ; delimiter
+	--get count
+	--check for genre
+
+	--add to genre table
+END
+
+CREATE PROCEDURE proc_initGenre
+@genre VARCHAR(25),
+@title VARCHAR(255),
+@artist VARCHAR(100)
+AS
+BEGIN
+	DECLARE @albumInfoId INT;
+	DECLARE @genreId INT;
+
+	--check if already a genre
+	IF NOT EXISTS (SELECT * FROM tbl_genre 
+                   WHERE genreName = @genre)
+	   BEGIN
+			--insert into genre table
+		   INSERT INTO tbl_genre(genreName) VALUES (@genre);
+		   --connect genre id to albumInfoId
+		   --get genreId
+		   SET @genreId = SCOPE_IDENTITY();
+	   END
+	ELSE
+		BEGIN
+			--genre already exists
+			--find genre id by genreName
+			SELECT @genreId = genreId FROM tbl_genre;
+		END
+
+	--get albumInfoId
+	SELECT @albumInfoId = albumInfoId FROM tbl_albumInfo
+	WHERE title = @title
+	AND artist = @artist;
+	--we have albumInfoId and genreId
+	--create tbl_albumInfo_genre
+	INSERT INTO tbl_albumInfo_genre(albumInfoId, genreId)
+	VALUES(@albumInfoId, @genreId);
+END
+
+CREATE PROCEDURE proc_initTrack
+@track VARCHAR(50),
+@title VARCHAR(255),
+@artist VARCHAR(100)
+AS
+BEGIN
+	--find albumInfoId
+	--insert into tbl_track
+	DECLARE @albumInfoId INT;
+	SELECT albumInfoId FROM tbl_albumInfo
+	WHERE title = @title
+	AND artist = @artist
+
+	INSERT INTO tbl_track(albumInfoId, trackName)
+	VALUES(@albumInfoId, @track);
+END
+
+
+--import warehouse list into ssis
+CREATE PROCEDURE proc_initWarehousesInventory
+@warehouseId INT,
+@albumInfoId INT,
+@itemCount INT
+AS
+BEGIN
+	--create increment for itemCount
+	DECLARE @foundProductionId INT;
+	DECLARE @countIncrement INT;
+	SET @countIncrement = @itemCount;
+
+	WHILE @countIncrement > 0
+		BEGIN
+			SELECT @countIncrement = @countIncrement -1;
+			--select random production house with TOP(1) --ORDER BY NEWID()
+			SELECT TOP(1) @foundProductionId = [Production Id] FROM view_productionToWarehouse
+			WHERE [Warehouse Id] = @warehouseId
+			ORDER BY NEWID();
+
+			--commission order
+			INSERT INTO tbl_item(
+
+		END
+
+END
+
+select * from view_productionToWarehouse
+WHERE [Warehouse Id] = 1

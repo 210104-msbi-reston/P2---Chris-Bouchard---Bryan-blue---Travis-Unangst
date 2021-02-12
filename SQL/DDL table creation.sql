@@ -34,23 +34,26 @@ CREATE TABLE tbl_store(
 
 
 CREATE TABLE tbl_albumInfo(
-	albumInfoId INT PRIMARY KEY IDENTITY(1,1),
-	title VARCHAR(20) NOT NULL,
-	artist VARCHAR(40) NOT NULL,
+	albumInfoId INT PRIMARY KEY,
+	title VARCHAR(255) NOT NULL,
+	artist VARCHAR(100) NOT NULL,
 	releaseDate DATETIME,
-	imgLink VARCHAR(max)
+	imgLink VARCHAR(255)
 ); 
+	--albumInfoId INT PRIMARY KEY IDENTITY(1,1),
 
 CREATE TABLE tbl_track(
-	trackId INT PRIMARY KEY IDENTITY(1,1),
+	trackId INT PRIMARY KEY,
 	albumInfoId INT FOREIGN KEY REFERENCES tbl_albumInfo(albumInfoId),
 	trackName VARCHAR(50)
 );
+	--trackId INT PRIMARY KEY IDENTITY(1,1),
 
 CREATE TABLE tbl_genre(
-	genreId INT PRIMARY KEY IDENTITY(1,1),
+	genreId INT PRIMARY KEY,
 	genreName VARCHAR(20),
 );
+	--genreId INT PRIMARY KEY IDENTITY(1,1),
 CREATE TABLE tbl_albumInfo_genre(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	albumInfoId INT FOREIGN KEY REFERENCES tbl_albumInfo(albumInfoId),
