@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="2/11/2021 1:17:56 PM"
+  DTS:CreationDate="2/10/2021 9:05:59 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="TRU-Z"
   DTS:CreatorName="TRU-Z\snype"
-  DTS:DTSID="{AB6D734D-25DB-487D-A8FB-8FCE8DB59FC8}"
+  DTS:DTSID="{917D571F-72B2-4773-9CED-D0078192D17F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="1033"
-  DTS:ObjectName="mainProcedure"
+  DTS:ObjectName="albumCreation"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{1240F559-C0EE-43DF-B37E-F57E5E5B5191}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{627E545C-8729-4803-B7F6-F7DB70348454}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -82,13 +82,77 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{B00458F1-A903-45FA-8BF9-2E64B8CA5653}"
-      DTS:ObjectName="Excel Connection Manager">
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B1412219-1EC3-407F-96A5-D77472083670}"
+      DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\snype\Desktop\P2\externalDataSources\Continents&amp;Countries97.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\snype\Downloads\records.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="title"
+              DTS:DTSID="{8CC204FA-304E-4415-88B3-1D9FCDB636A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="artist"
+              DTS:DTSID="{FE5326F4-A78A-4BA0-98DD-40842B5A9C29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genre"
+              DTS:DTSID="{CDDD07E1-E77D-43C4-95BD-4EFCCD94159B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{E953BF31-608B-4173-9A31-EDA7BA2E322B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="img_url"
+              DTS:DTSID="{CBF186D1-7481-4C66-A3FC-AD49DC429537}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tracklist"
+              DTS:DTSID="{4BCAE920-2AB6-46DB-B171-46AB3A2A3749}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -177,6 +241,80 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[recordsTestCsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AEE6367A-46A3-4C01-863B-3FA2BF92FEDB}"
+      DTS:ObjectName="recordsTestCsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\snype\Desktop\P2\externalDataSources\recordsTest.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="title"
+              DTS:DTSID="{DADFDC43-7BE0-4CBF-BAC6-F27F0C1BAAEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="artist"
+              DTS:DTSID="{3C8787A6-FA60-499A-9658-E5C133EA853A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genre"
+              DTS:DTSID="{E5F3E1A7-E95B-4FAC-A2C3-CC6A21CE2B93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{165FC4FD-98BE-4626-8737-4D21384F6FF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="img_url"
+              DTS:DTSID="{9B654AF1-92B9-4697-BA1F-1AD5EAF02CE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tracklist"
+              DTS:DTSID="{5687B618-9DAF-4B8C-A7B6-879A9DA84D89}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[tracks]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{69E764BB-EFA4-45A5-9139-B78CAD61F715}"
@@ -226,28 +364,8 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{1F5ACC33-80E2-418C-A9B3-EF6CA0F743C6}"
-      DTS:ObjectName="TRU-Z\NYKSERVER.CBTVinyls">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=TRU-Z\NYKSERVER;Initial Catalog=CBTVinyls;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{16573935-ED61-48C3-AD6E-9C06445FC2F0}"
-      DTS:ObjectName="TRU-Z\NYKSERVER.CBTVinyls 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=TRU-Z\NYKSERVER;Initial Catalog=CBTVinyls;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
-      DTS:CreationName="OLEDB"
       DTS:DTSID="{2FEDEB86-156B-4E32-AF17-B04FBA273FE1}"
-      DTS:ObjectName="TRU-Z\NYKSERVER.CBTVinyls 2">
+      DTS:ObjectName="TRU-Z\NYKSERVER.CBTVinyls">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=TRU-Z\NYKSERVER;Initial Catalog=CBTVinyls;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
@@ -260,8 +378,7 @@
       DTS:refId="Package\create albums"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{19b99990-af43-4a37-990c-4ee71efb27bd}"
+      DTS:DTSID="{149b8a47-c73a-498d-b16c-ac29848c0a57}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="create albums"
@@ -3370,8 +3487,8 @@
               <connections>
                 <connection
                   refId="Package\create albums\tbl_albumInfo.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
+                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3538,8 +3655,8 @@
               <connections>
                 <connection
                   refId="Package\create albums\tbl_albumInfo_genre.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
+                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3668,8 +3785,8 @@
               <connections>
                 <connection
                   refId="Package\create albums\tbl_genre.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
+                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3797,8 +3914,8 @@
               <connections>
                 <connection
                   refId="Package\create albums\tbl_track.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 2]"
+                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4141,2075 +4258,6 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\init Continents"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{09d50c5c-ea16-49f2-b1cd-58588456073e}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="init Continents"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\init Continents\Continent"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Continent"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tbl_continent]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\init Continents\Continent.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\init Continents\Continent.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Continents\Continent.Inputs[OLE DB Destination Input].Columns[continentTransformed]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="continentTransformed"
-                      externalMetadataColumnId="Package\init Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentName]"
-                      lineageId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Output].Columns[continentTransformed]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="continentName" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Continent.Inputs[OLE DB Destination Input].ExternalColumns[continentId]"
-                      dataType="i4"
-                      name="continentId" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Continents\Continent.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\init Continents\Continent.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Continents\Continent.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Continents\Country&amp;Continent 1"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="Country&amp;Continent 1"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">'C&amp;C$'</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\init Continents\Country&amp;Continent 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
-                      length="50"
-                      lineageId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
-                      name="Continent"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[number]"
-                      dataType="r8"
-                      name="number" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Country]"
-                      dataType="wstr"
-                      length="255"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[ISO-alpha3 Code]"
-                      dataType="wstr"
-                      length="255"
-                      name="ISO-alpha3 Code" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[M49 Code]"
-                      dataType="r8"
-                      name="M49 Code" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 1]"
-                      dataType="wstr"
-                      length="255"
-                      name="Region 1" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 2]"
-                      dataType="wstr"
-                      length="255"
-                      name="Region 2" />
-                    <externalMetadataColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
-                      dataType="wstr"
-                      length="255"
-                      name="Continent" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
-                      name="Continent" />
-                    <outputColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Continents\Sort"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\init Continents\Sort.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Continents\Sort.Inputs[Sort Input].Columns[Continent]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Continent"
-                      lineageId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Continents\Sort.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Continents\Sort.Outputs[Sort Output].Columns[Continent]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\init Continents\Sort.Outputs[Sort Output].Columns[Continent]"
-                      name="Continent"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Continents\to VARCHAR"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="to VARCHAR"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\init Continents\to VARCHAR.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Continents\to VARCHAR.Inputs[Data Conversion Input].Columns[Continent]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Continent"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\init Continents\Sort.Outputs[Sort Output].Columns[Continent]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\init Continents\to VARCHAR.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Output].Columns[continentTransformed]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Output].Columns[continentTransformed]"
-                      name="continentTransformed"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\init Continents\Sort.Outputs[Sort Output].Columns[Continent]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\init Continents\to VARCHAR.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\init Continents.Paths[Data Conversion Output]"
-              endId="Package\init Continents\Continent.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\init Continents\to VARCHAR.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\init Continents.Paths[Excel Source Output]"
-              endId="Package\init Continents\Sort.Inputs[Sort Input]"
-              name="Excel Source Output"
-              startId="Package\init Continents\Country&amp;Continent 1.Outputs[Excel Source Output]" />
-            <path
-              refId="Package\init Continents.Paths[Sort Output]"
-              endId="Package\init Continents\to VARCHAR.Inputs[Data Conversion Input]"
-              name="Sort Output"
-              startId="Package\init Continents\Sort.Outputs[Sort Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\init Countries"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{e3e39267-edca-4b4c-95e5-f875d08ee02e}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="init Countries"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\init Countries\continents table"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="continents table"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tbl_continent]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\init Countries\continents table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\init Countries\continents table.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\init Countries\continents table.Outputs[OLE DB Source Output].ExternalColumns[continentId]"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentId]"
-                      name="continentId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\init Countries\continents table.Outputs[OLE DB Source Output].ExternalColumns[continentName]"
-                      length="20"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentName]"
-                      name="continentName"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Output].ExternalColumns[continentId]"
-                      dataType="i4"
-                      name="continentId" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Output].ExternalColumns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="continentName" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[continentId]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[continentId]"
-                      name="continentId" />
-                    <outputColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[continentName]"
-                      name="continentName" />
-                    <outputColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Countries\Country"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Country"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tbl_country]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\init Countries\Country.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\init Countries\Country.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Countries\Country.Inputs[OLE DB Destination Input].Columns[continentId]"
-                      cachedDataType="i4"
-                      cachedName="continentId"
-                      externalMetadataColumnId="Package\init Countries\Country.Inputs[OLE DB Destination Input].ExternalColumns[continentId]"
-                      lineageId="Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[continentId]" />
-                    <inputColumn
-                      refId="Package\init Countries\Country.Inputs[OLE DB Destination Input].Columns[countryTransformed]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="countryTransformed"
-                      externalMetadataColumnId="Package\init Countries\Country.Inputs[OLE DB Destination Input].ExternalColumns[countryName]"
-                      lineageId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Output].Columns[countryTransformed]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country.Inputs[OLE DB Destination Input].ExternalColumns[countryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="countryName" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country.Inputs[OLE DB Destination Input].ExternalColumns[countryId]"
-                      dataType="i4"
-                      name="countryId" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country.Inputs[OLE DB Destination Input].ExternalColumns[continentId]"
-                      dataType="i4"
-                      name="continentId" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Countries\Country.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\init Countries\Country.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\Country.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\Country.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Countries\Country.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\Country.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Countries\Country&amp;Continent 1"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="Country&amp;Continent 1"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">'C&amp;C$'</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\init Countries\Country&amp;Continent 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
-                      length="255"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]"
-                      name="Continent"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Country]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Country]"
-                      length="255"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Country]"
-                      name="Country"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[number]"
-                      dataType="r8"
-                      name="number" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Country]"
-                      dataType="wstr"
-                      length="255"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[ISO-alpha3 Code]"
-                      dataType="wstr"
-                      length="255"
-                      name="ISO-alpha3 Code" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[M49 Code]"
-                      dataType="r8"
-                      name="M49 Code" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 1]"
-                      dataType="wstr"
-                      length="255"
-                      name="Region 1" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Region 2]"
-                      dataType="wstr"
-                      length="255"
-                      name="Region 2" />
-                    <externalMetadataColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].ExternalColumns[Continent]"
-                      dataType="wstr"
-                      length="255"
-                      name="Continent" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Continent]"
-                      name="Continent" />
-                    <outputColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                    <outputColumn
-                      refId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Country]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Error Output].Columns[Country]"
-                      name="Country" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Countries\Merge Join"
-              componentClassID="Microsoft.MergeJoin"
-              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-              name="Merge Join"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of join to perform."
-                  name="JoinType"
-                  typeConverter="JoinType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the number of columns in the ordering key."
-                  name="NumKeyColumns">1</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the null values are treated as equal values."
-                  name="TreatNullsAsEqual">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates the requested maximum buffers per input before blocking."
-                  name="MaxBuffersPerInput">5</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\init Countries\Merge Join.Inputs[Merge Join Left Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Left Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Countries\Merge Join.Inputs[Merge Join Left Input].Columns[continentName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="continentName"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\init Countries\Sort 1.Outputs[Sort Output].Columns[continentName]" />
-                    <inputColumn
-                      refId="Package\init Countries\Merge Join.Inputs[Merge Join Left Input].Columns[continentId]"
-                      cachedDataType="i4"
-                      cachedName="continentId"
-                      lineageId="Package\init Countries\Sort 1.Outputs[Sort Output].Columns[continentId]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\init Countries\Merge Join.Inputs[Merge Join Right Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Right Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Countries\Merge Join.Inputs[Merge Join Right Input].Columns[Continent]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Continent"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\init Countries\Sort.Outputs[Sort Output].Columns[Continent]" />
-                    <inputColumn
-                      refId="Package\init Countries\Merge Join.Inputs[Merge Join Right Input].Columns[Country]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Country"
-                      cachedSortKeyPosition="2"
-                      lineageId="Package\init Countries\Sort.Outputs[Sort Output].Columns[Country]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Countries\Merge Join.Outputs[Merge Join Output]"
-                  name="Merge Join Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[continentId]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[continentId]"
-                      name="continentId">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\init Countries\Merge Join.Inputs[Merge Join Left Input].Columns[continentId]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[Country]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[Country]"
-                      name="Country">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\init Countries\Merge Join.Inputs[Merge Join Right Input].Columns[Country]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Countries\Sort"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\init Countries\Sort.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Countries\Sort.Inputs[Sort Input].Columns[Continent]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Continent"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\init Countries\Sort.Inputs[Sort Input].Columns[Country]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Country"
-                      lineageId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Country]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Countries\Sort.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\Sort.Outputs[Sort Output].Columns[Continent]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\init Countries\Sort.Outputs[Sort Output].Columns[Continent]"
-                      name="Continent"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Continent]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\init Countries\Sort.Outputs[Sort Output].Columns[Country]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\init Countries\Sort.Outputs[Sort Output].Columns[Country]"
-                      name="Country"
-                      sortKeyPosition="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output].Columns[Country]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Countries\Sort 1"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort 1"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\init Countries\Sort 1.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Countries\Sort 1.Inputs[Sort Input].Columns[continentId]"
-                      cachedDataType="i4"
-                      cachedName="continentId"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentId]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\init Countries\Sort 1.Inputs[Sort Input].Columns[continentName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="continentName"
-                      lineageId="Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentName]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Countries\Sort 1.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\Sort 1.Outputs[Sort Output].Columns[continentId]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\Sort 1.Outputs[Sort Output].Columns[continentId]"
-                      name="continentId">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentId]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\init Countries\Sort 1.Outputs[Sort Output].Columns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\init Countries\Sort 1.Outputs[Sort Output].Columns[continentName]"
-                      name="continentName"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\init Countries\continents table.Outputs[OLE DB Source Output].Columns[continentName]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\init Countries\To VARCHAR for Continent"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="To VARCHAR for Continent"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\init Countries\To VARCHAR for Continent.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\init Countries\To VARCHAR for Continent.Inputs[Data Conversion Input].Columns[Country]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Country"
-                      lineageId="Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\init Countries\To VARCHAR for Continent.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Output].Columns[countryTransformed]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Output].Columns[countryTransformed]"
-                      name="countryTransformed"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\init Countries\Merge Join.Outputs[Merge Join Output].Columns[Country]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\init Countries\To VARCHAR for Continent.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\init Countries.Paths[Data Conversion Output]"
-              endId="Package\init Countries\Country.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\init Countries\To VARCHAR for Continent.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\init Countries.Paths[Excel Source Output]"
-              endId="Package\init Countries\Sort.Inputs[Sort Input]"
-              name="Excel Source Output"
-              startId="Package\init Countries\Country&amp;Continent 1.Outputs[Excel Source Output]" />
-            <path
-              refId="Package\init Countries.Paths[Merge Join Output]"
-              endId="Package\init Countries\To VARCHAR for Continent.Inputs[Data Conversion Input]"
-              name="Merge Join Output"
-              startId="Package\init Countries\Merge Join.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\init Countries.Paths[OLE DB Source Output]"
-              endId="Package\init Countries\Sort 1.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\init Countries\continents table.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\init Countries.Paths[Sort Output]"
-              endId="Package\init Countries\Merge Join.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\init Countries\Sort 1.Outputs[Sort Output]" />
-            <path
-              refId="Package\init Countries.Paths[Sort Output1]"
-              endId="Package\init Countries\Merge Join.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\init Countries\Sort.Outputs[Sort Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Init Production"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{030aa27d-6256-45cc-af46-2855c1f1929e}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Init Production"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Init Production\Continent Table"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="Continent Table"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tbl_continent]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Init Production\Continent Table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].Columns[continentId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].ExternalColumns[continentId]"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].Columns[continentId]"
-                      name="continentId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].Columns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].ExternalColumns[continentName]"
-                      length="20"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].Columns[continentName]"
-                      name="continentName"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].ExternalColumns[continentId]"
-                      dataType="i4"
-                      name="continentId" />
-                    <externalMetadataColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].ExternalColumns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="continentName" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[continentId]"
-                      dataType="i4"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[continentId]"
-                      name="continentId" />
-                    <outputColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[continentName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[continentName]"
-                      name="continentName" />
-                    <outputColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Init Production\proc_initProduction"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="proc_initProduction"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE proc_initProduction @contId = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Init Production\proc_initProduction.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input].Columns[continentId]"
-                      cachedDataType="i4"
-                      cachedName="continentId"
-                      externalMetadataColumnId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input].ExternalColumns[@contId]"
-                      lineageId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output].Columns[continentId]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input].ExternalColumns[@contId]"
-                      dataType="i4"
-                      name="@contId">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Init Production\proc_initProduction.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Init Production\proc_initProduction.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Production\proc_initProduction.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Init Production\proc_initProduction.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Init Production\proc_initProduction.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Init Production\proc_initProduction.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Init Production.Paths[OLE DB Source Output]"
-              endId="Package\Init Production\proc_initProduction.Inputs[OLE DB Command Input]"
-              name="OLE DB Source Output"
-              startId="Package\Init Production\Continent Table.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Init Store"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{67a2ff79-91cb-4465-a58e-1052e3e6ec2e}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Init Store"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Init Store\proc_initZone"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="proc_initZone"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE proc_initStore @zoneId = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Init Store\proc_initZone.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input].Columns[zoneId]"
-                      cachedDataType="i4"
-                      cachedName="zoneId"
-                      externalMetadataColumnId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input].ExternalColumns[@zoneId]"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[zoneId]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input].ExternalColumns[@zoneId]"
-                      dataType="i4"
-                      name="@zoneId">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Init Store\proc_initZone.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Init Store\proc_initZone.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Store\proc_initZone.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Init Store\proc_initZone.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Init Store\proc_initZone.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Init Store\proc_initZone.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Init Store\Zone Table"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="Zone Table"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tbl_zone]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Init Store\Zone Table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[countryId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].ExternalColumns[countryId]"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[countryId]"
-                      name="countryId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[zoneId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].ExternalColumns[zoneId]"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[zoneId]"
-                      name="zoneId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[zoneName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].ExternalColumns[zoneName]"
-                      length="10"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].Columns[zoneName]"
-                      name="zoneName"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].ExternalColumns[countryId]"
-                      dataType="i4"
-                      name="countryId" />
-                    <externalMetadataColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].ExternalColumns[zoneId]"
-                      dataType="i4"
-                      name="zoneId" />
-                    <externalMetadataColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output].ExternalColumns[zoneName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="zoneName" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[zoneId]"
-                      dataType="i4"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[zoneId]"
-                      name="zoneId" />
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[countryId]"
-                      dataType="i4"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[countryId]"
-                      name="countryId" />
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[zoneName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[zoneName]"
-                      name="zoneName" />
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Init Store\Zone Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Init Store.Paths[OLE DB Source Output]"
-              endId="Package\Init Store\proc_initZone.Inputs[OLE DB Command Input]"
-              name="OLE DB Source Output"
-              startId="Package\Init Store\Zone Table.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Init Warehouse and Zone"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{868ffdbf-2738-4347-8a79-1e26117cfafd}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Init Warehouse and Zone"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Init Warehouse and Zone\Country Table"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="Country Table"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tbl_country]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Init Warehouse and Zone\Country Table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[continentId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].ExternalColumns[continentId]"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[continentId]"
-                      name="continentId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[countryId]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].ExternalColumns[countryId]"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[countryId]"
-                      name="countryId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[countryName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].ExternalColumns[countryName]"
-                      length="255"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[countryName]"
-                      name="countryName"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].ExternalColumns[continentId]"
-                      dataType="i4"
-                      name="continentId" />
-                    <externalMetadataColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].ExternalColumns[countryId]"
-                      dataType="i4"
-                      name="countryId" />
-                    <externalMetadataColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].ExternalColumns[countryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="countryName" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[countryId]"
-                      dataType="i4"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[countryId]"
-                      name="countryId" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[continentId]"
-                      dataType="i4"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[continentId]"
-                      name="continentId" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[countryName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[countryName]"
-                      name="countryName" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="proc_initWarehouseAndZone"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE proc_initWarehouseAndZone @countrId = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[TRU-Z\NYKSERVER.CBTVinyls 1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input].Columns[countryId]"
-                      cachedDataType="i4"
-                      cachedName="countryId"
-                      externalMetadataColumnId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input].ExternalColumns[@countrId]"
-                      lineageId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output].Columns[countryId]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input].ExternalColumns[@countrId]"
-                      dataType="i4"
-                      name="@countrId">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Init Warehouse and Zone.Paths[OLE DB Source Output]"
-              endId="Package\Init Warehouse and Zone\proc_initWarehouseAndZone.Inputs[OLE DB Command Input]"
-              name="OLE DB Source Output"
-              startId="Package\Init Warehouse and Zone\Country Table.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -6222,539 +4270,19 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="147,42"
-          Id="Package\init Continents"
-          TopLeft="207,191" />
-        <NodeLayout
-          Size="141,42"
-          Id="Package\init Countries"
-          TopLeft="417,193" />
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Init Production"
-          TopLeft="639,194" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Init Store"
-          TopLeft="1108,194" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\Init Warehouse and Zone"
-          TopLeft="850,195" />
-        <AnnotationLayout
-          Text="step 1"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="61,40"
-          Id="766a1831-6419-471f-ad13-22e6294150ec"
-          TopLeft="243,140" />
-        <AnnotationLayout
-          Text="step 2"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="61,40"
-          Id="c0dd7584-0d64-46a6-8d9e-8308d15e4acc"
-          TopLeft="467,139" />
-        <AnnotationLayout
-          Text="step 3"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="61,40"
-          Id="1a81e0f0-387a-4948-8396-c2f8df5734c1"
-          TopLeft="687,138" />
-        <AnnotationLayout
-          Text="disable others, call one at a time, they rely on getting data from the database"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="436,40"
-          Id="508da8a4-191b-471a-a330-ec0f7f179e32"
-          TopLeft="508,69" />
-        <AnnotationLayout
-          Text="step 4"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="61,40"
-          Id="24d0325b-347b-47af-98e7-f9f91bf3753b"
-          TopLeft="915,150" />
-        <AnnotationLayout
-          Text="step 5"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="61,40"
-          Id="89cfc180-b94f-477c-a468-302244934328"
-          TopLeft="1146,149" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="145,42"
           Id="Package\create albums"
-          TopLeft="1284,193" />
-        <AnnotationLayout
-          Text="step 6&#xD;&#xA;need to run twice, error will happen to 2 each time, but results are pretty solid&#xD;&#xA;as far as I can see"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="441,72"
-          Id="f9c35cf3-4087-42f0-88bc-228d9bb57320"
-          TopLeft="1321,119" />
+          TopLeft="589,166" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\init Continents">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="138,42"
-          Id="Package\init Continents\to VARCHAR"
-          TopLeft="134,219" />
-        <NodeLayout
-          Size="124,42"
-          Id="Package\init Continents\Continent"
-          TopLeft="153,382" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\init Continents\Country&amp;Continent 1"
-          TopLeft="129,44" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\init Continents\Sort"
-          TopLeft="160,130" />
-        <EdgeLayout
-          Id="Package\init Continents.Paths[Sort Output]"
-          TopLeft="206,172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Continents.Paths[Excel Source Output]"
-          TopLeft="211,86">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Continents.Paths[Data Conversion Output]"
-          TopLeft="203,261">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12,121"
-              Start="0,0"
-              End="12,113.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,56.5"
-                    Point2="0,60.5"
-                    Point3="4,60.5" />
-                  <mssgle:LineSegment
-                    End="8,60.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8,60.5"
-                    Point2="12,60.5"
-                    Point3="12,64.5" />
-                  <mssgle:LineSegment
-                    End="12,113.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\init Countries">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="107,42"
-          Id="Package\init Countries\Sort 1"
-          TopLeft="251,142" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\init Countries\To VARCHAR for Continent"
-          TopLeft="320,386" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\init Countries\Country&amp;Continent 1"
-          TopLeft="469,48" />
-        <NodeLayout
-          Size="116,42"
-          Id="Package\init Countries\Country"
-          TopLeft="360,464" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\init Countries\continents table"
-          TopLeft="233,50" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\init Countries\Merge Join"
-          TopLeft="360,300" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\init Countries\Sort"
-          TopLeft="500,134" />
-        <EdgeLayout
-          Id="Package\init Countries.Paths[Sort Output1]"
-          TopLeft="549,176">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-103.666666666667,124"
-              Start="0,0"
-              End="-103.666666666667,116.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.4954407294833" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69.4954407294833"
-                    Point2="0,73.4954407294833"
-                    Point3="-4,73.4954407294833" />
-                  <mssgle:LineSegment
-                    End="-99.6666666666667,73.4954407294833" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-99.6666666666667,73.4954407294833"
-                    Point2="-103.666666666667,73.4954407294833"
-                    Point3="-103.666666666667,77.4954407294833" />
-                  <mssgle:LineSegment
-                    End="-103.666666666667,116.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Countries.Paths[Sort Output]"
-          TopLeft="304.5,184">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.166666666667,116"
-              Start="0,0"
-              End="100.166666666667,108.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.7537993920973" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,64.7537993920973"
-                    Point2="0,68.7537993920973"
-                    Point3="4,68.7537993920973" />
-                  <mssgle:LineSegment
-                    End="96.1666666666667,68.7537993920973" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.1666666666667,68.7537993920973"
-                    Point2="100.166666666667,68.7537993920973"
-                    Point3="100.166666666667,72.7537993920973" />
-                  <mssgle:LineSegment
-                    End="100.166666666667,108.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Countries.Paths[OLE DB Source Output]"
-          TopLeft="307.25,92">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Countries.Paths[Merge Join Output]"
-          TopLeft="423.75,342">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Countries.Paths[Excel Source Output]"
-          TopLeft="551,90">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\init Countries.Paths[Data Conversion Output]"
-          TopLeft="420.25,428">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Continents should be done first"
-          ParentId="Package\init Countries"
-          FontInfo="{assembly:Null}"
-          Size="196,NaN"
-          Id="cf39b9ae-b751-4959-8e1e-bc7309af9af9"
-          TopLeft="660,52" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Init Production">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Init Production\proc_initProduction"
-          TopLeft="233,256" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Init Production\Continent Table"
-          TopLeft="234,118" />
-        <EdgeLayout
-          Id="Package\Init Production.Paths[OLE DB Source Output]"
-          TopLeft="314.25,160">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,96"
-              Start="0,0"
-              End="0,88.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,88.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Init Store">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Init Store\proc_initZone"
-          TopLeft="112,199" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\Init Store\Zone Table"
-          TopLeft="113,60" />
-        <EdgeLayout
-          Id="Package\Init Store.Paths[OLE DB Source Output]"
-          TopLeft="181,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,97"
-              Start="0,0"
-              End="0,89.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,89.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Init Warehouse and Zone">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="214,42"
-          Id="Package\Init Warehouse and Zone\proc_initWarehouseAndZone"
-          TopLeft="87,196" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Init Warehouse and Zone\Country Table"
-          TopLeft="113,60" />
-        <EdgeLayout
-          Id="Package\Init Warehouse and Zone.Paths[OLE DB Source Output]"
-          TopLeft="185.5,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.5,94"
-              Start="0,0"
-              End="8.5,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43"
-                    Point2="0,47"
-                    Point3="4,47" />
-                  <mssgle:LineSegment
-                    End="4.5,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,47"
-                    Point2="8.5,47"
-                    Point3="8.5,51" />
-                  <mssgle:LineSegment
-                    End="8.5,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\create albums">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="139,42"
           Id="Package\create albums\Merge Join 1"
@@ -6878,9 +4406,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6914,9 +4440,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6950,9 +4474,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6974,9 +4496,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7010,9 +4530,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7046,9 +4564,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7082,9 +4598,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7118,9 +4632,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7154,9 +4666,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7190,9 +4700,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7226,9 +4734,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7262,9 +4768,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7298,9 +4802,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7322,9 +4824,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7346,9 +4846,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7382,9 +4880,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7406,9 +4902,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7430,9 +4924,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7454,9 +4946,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7478,9 +4968,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7502,9 +4990,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7538,9 +5024,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
