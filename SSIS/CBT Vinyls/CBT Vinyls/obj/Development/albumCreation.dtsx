@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/10/2021 9:05:59 AM"
@@ -4205,52 +4205,52 @@
               name="Multicast Output 5"
               startId="Package\create albums\Multicast.Outputs[Multicast Output 5]" />
             <path
-              refId="Package\create albums.Paths[Sort Output2]"
+              refId="Package\create albums.Paths[Sort Output]"
               endId="Package\create albums\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 1.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output3]"
+              refId="Package\create albums.Paths[Sort Output1]"
               endId="Package\create albums\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\create albums\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output4]"
+              refId="Package\create albums.Paths[Sort Output2]"
               endId="Package\create albums\Merge Join 2.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 3 2.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output5]"
+              refId="Package\create albums.Paths[Sort Output3]"
               endId="Package\create albums\Merge Join 1.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 2.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output6]"
+              refId="Package\create albums.Paths[Sort Output4]"
               endId="Package\create albums\tbl_genre.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 7.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output7]"
+              refId="Package\create albums.Paths[Sort Output5]"
               endId="Package\create albums\tbl_track.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 5.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output8]"
+              refId="Package\create albums.Paths[Sort Output6]"
               endId="Package\create albums\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 3 1.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output9]"
+              refId="Package\create albums.Paths[Sort Output7]"
               endId="Package\create albums\tbl_albumInfo.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 4.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output]"
+              refId="Package\create albums.Paths[Sort Output8]"
               endId="Package\create albums\Merge Join 2.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 3.Outputs[Sort Output]" />
             <path
-              refId="Package\create albums.Paths[Sort Output1]"
+              refId="Package\create albums.Paths[Sort Output9]"
               endId="Package\create albums\tbl_albumInfo_genre.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\create albums\Sort 6.Outputs[Sort Output]" />
@@ -4478,7 +4478,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output9]"
+          Id="Package\create albums.Paths[Sort Output7]"
           TopLeft="974.5,614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4500,7 +4500,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output8]"
+          Id="Package\create albums.Paths[Sort Output6]"
           TopLeft="436,499">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4534,7 +4534,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output7]"
+          Id="Package\create albums.Paths[Sort Output5]"
           TopLeft="1347.5,614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4568,7 +4568,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output6]"
+          Id="Package\create albums.Paths[Sort Output4]"
           TopLeft="1097.5,616">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4602,7 +4602,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output5]"
+          Id="Package\create albums.Paths[Sort Output3]"
           TopLeft="689,496">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4636,7 +4636,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output4]"
+          Id="Package\create albums.Paths[Sort Output2]"
           TopLeft="571,693">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4670,7 +4670,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output3]"
+          Id="Package\create albums.Paths[Sort Output1]"
           TopLeft="327,276">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4704,7 +4704,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output2]"
+          Id="Package\create albums.Paths[Sort Output]"
           TopLeft="559.5,281">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4738,7 +4738,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output1]"
+          Id="Package\create albums.Paths[Sort Output9]"
           TopLeft="1220.5,615">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4772,7 +4772,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\create albums.Paths[Sort Output]"
+          Id="Package\create albums.Paths[Sort Output8]"
           TopLeft="792,696">
           <EdgeLayout.Curve>
             <mssgle:Curve
