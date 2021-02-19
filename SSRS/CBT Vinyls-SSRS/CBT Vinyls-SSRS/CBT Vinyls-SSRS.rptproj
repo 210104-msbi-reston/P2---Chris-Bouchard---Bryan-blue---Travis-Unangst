@@ -65,7 +65,7 @@
   <ItemGroup>
     <Report Include="albumInstance.rdl" />
     <Report Include="artistInstance.rdl" />
-    <Report Include="Copy of GlobalTakeover.rdl" />
+    <Report Include="CountryBreakdown.rdl" />
     <Report Include="Cover.rdl" />
     <Report Include="GlobalTakeover.rdl" />
     <Report Include="Innovators.rdl" />
