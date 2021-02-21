@@ -90,28 +90,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>released in: </Value>
-                    <Style>
-                      <FontFamily>railway</FontFamily>
-                      <FontSize>18pt</FontSize>
-                      <Color>#a53c46</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Label>year</Label>
-                    <Value>=First(Fields!year.Value, "all_product")</Value>
-                    <Style>
-                      <FontFamily>railway</FontFamily>
-                      <FontSize>18pt</FontSize>
-                      <Color>#242426</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
                     <Value>genre: </Value>
                     <Style>
                       <FontFamily>railway</FontFamily>
@@ -133,9 +111,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>artist</rd:DefaultName>
-            <Top>2.72792in</Top>
+            <Top>3.05084in</Top>
             <Left>1.29688in</Left>
-            <Height>1.04167in</Height>
+            <Height>0.71875in</Height>
             <Width>3.28125in</Width>
             <Style>
               <Border>
@@ -608,6 +586,7 @@
             <Height>6.2118in</Height>
             <Width>6.92708in</Width>
             <ZIndex>3</ZIndex>
+            <ToolTip>=""</ToolTip>
             <Style>
               <Border>
                 <Color>LightGrey</Color>

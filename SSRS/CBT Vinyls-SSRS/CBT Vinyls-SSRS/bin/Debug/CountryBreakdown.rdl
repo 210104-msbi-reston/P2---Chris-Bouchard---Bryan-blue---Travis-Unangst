@@ -173,7 +173,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Country Breakdown</Value>
+                        <Value>Area Breakdown</Value>
                         <Style>
                           <FontFamily>Riot Squad NF</FontFamily>
                           <FontSize>38pt</FontSize>
@@ -879,7 +879,6 @@
                 </TablixRowHierarchy>
                 <DataSetName>DataSet2</DataSetName>
                 <Top>1.92708in</Top>
-                <Left>0in</Left>
                 <Height>0.83333in</Height>
                 <Width>6.88541in</Width>
                 <ZIndex>4</ZIndex>
